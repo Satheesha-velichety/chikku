@@ -1,0 +1,7 @@
+val stringDate="2018-01-01";
+val formatter = new SimpleDateFormat("yyyy-MM-dd");
+val date:Date = formatter.parse(stringDate);
+val calender = Calendar.getInstance();
+calender.setTime(date);
+val yesterday=new Date(calender.getTimeInMillis()-1*24*60*60*1000);
+formatter.format(yesterday)
