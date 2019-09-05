@@ -1,4 +1,8 @@
+import java.util.{Calendar, Date}
+import java.text.SimpleDateFormat
+
 def getPaths(feeddate:String,hour:String):(String,String,String)={
+var paths=("","","")
 if(hour.toInt<2){
  val formatter = new SimpleDateFormat("yyyy-MM-dd");
  val date:Date = formatter.parse(feeddate);
@@ -25,3 +29,4 @@ if(hour.toInt<2){
 }
 paths
 }
+
