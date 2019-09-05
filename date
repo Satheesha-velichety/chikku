@@ -7,7 +7,7 @@ if(hour.toInt<2){
  val yesterdayinms=new Date(calender.getTimeInMillis()-1*24*60*60*1000);
  val yesterday=formatter.format(yesterdayinms)
  if(hour.toInt==0){
-   paths=(yesterday+"/22",yesterday+"/23",today+"/00")
+   paths=(yesterday+"/22",yesterday+"/23",feeddate+"/00")
  }
  
  if(hour.toInt==1){
@@ -21,7 +21,7 @@ if(hour.toInt<2){
    val hour2str=if(hour2.toString().length==1) "0"+hour2.toString else hour2.toString()
    val hour3str=if(hour3.toString().length==1) "0"+hour3.toString else hour3.toString()
 
- paths=(today+"/"+hour1str,today+"/"+hour2str,today+"/"+hour3str)
+ paths=(feeddate+"/"+hour1str,feeddate+"/"+hour2str,feeddate+"/"+hour3str)
 }
 paths
 }
