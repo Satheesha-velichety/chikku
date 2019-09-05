@@ -1,7 +1,7 @@
-def getPaths(date:String,hour:String):(String,String,String)={
+def getPaths(feeddate:String,hour:String):(String,String,String)={
 if(hour.toInt<2){
  val formatter = new SimpleDateFormat("yyyy-MM-dd");
- val date:Date = formatter.parse(today);
+ val date:Date = formatter.parse(feeddate);
  val calender = Calendar.getInstance();
  calender.setTime(date);
  val yesterdayinms=new Date(calender.getTimeInMillis()-1*24*60*60*1000);
