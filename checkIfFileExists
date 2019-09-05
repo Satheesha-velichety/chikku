@@ -1,10 +1,10 @@
-  def checkIfHDFSpathExists(path: String): String = {
+  def checkIfHDFSpathExists(path: String): Boolean = {
     val hdfs = org.apache.hadoop.fs.FileSystem.get(new java.net.URI(""), new org.apache.hadoop.conf.Configuration())
     val path = new org.apache.hadoop.fs.Path(path)
     if (hdfs.exists(path)) {
-      "Path exists"
+      true
     }else{
-      ""Doesn't exists"
+      false
     }
   }
   
