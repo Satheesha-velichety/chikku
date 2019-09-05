@@ -1,7 +1,27 @@
-val stringDate="2018-01-01";
-val formatter = new SimpleDateFormat("yyyy-MM-dd");
-val date:Date = formatter.parse(stringDate);
-val calender = Calendar.getInstance();
-calender.setTime(date);
-val yesterday=new Date(calender.getTimeInMillis()-1*24*60*60*1000);
-formatter.format(yesterday)
+def getPaths(date:String,hour:String):(String,String,String)={
+if(hour.toInt<2){
+ val formatter = new SimpleDateFormat("yyyy-MM-dd");
+ val date:Date = formatter.parse(today);
+ val calender = Calendar.getInstance();
+ calender.setTime(date);
+ val yesterdayinms=new Date(calender.getTimeInMillis()-1*24*60*60*1000);
+ val yesterday=formatter.format(yesterdayinms)
+ if(hour.toInt==0){
+   paths=(yesterday+"/22",yesterday+"/23",today+"/00")
+ }
+ 
+ if(hour.toInt==1){
+  paths=(yesterday+"/23",today+"/00",today+"/01")
+ }
+}else{
+   val hour2=hour.toInt-1
+   val hour3=hour.toInt-2
+   
+   val hour1str=if(hour.toString().length==1) "0"+hour.toString else hour.toString()
+   val hour2str=if(hour2.toString().length==1) "0"+hour2.toString else hour2.toString()
+   val hour3str=if(hour3.toString().length==1) "0"+hour3.toString else hour3.toString()
+
+ paths=(today+"/"+hour1str,today+"/"+hour2str,today+"/"+hour3str)
+}
+paths
+}
