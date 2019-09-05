@@ -11,7 +11,7 @@ if(hour.toInt<2){
  }
  
  if(hour.toInt==1){
-  paths=(yesterday+"/23",today+"/00",today+"/01")
+  paths=(yesterday+"/23",feeddate+"/00",feeddate+"/01")
  }
 }else{
    val hour2=hour.toInt-1
